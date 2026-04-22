@@ -34,7 +34,7 @@ namespace CustomPostProcessingEffects
             if (_material == null) return;
             
             _material.SetFloat("_Intensity",intensity.value);
-            cmd.Blit(source,destination,_material,0);
+            Blitter.BlitCameraTexture(cmd, source, destination, _material, 0);
             
         }
 

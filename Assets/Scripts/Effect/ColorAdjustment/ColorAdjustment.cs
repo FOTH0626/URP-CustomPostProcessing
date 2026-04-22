@@ -75,7 +75,7 @@ namespace CustomPostProcessingEffects{
             SetKeyWord(mSaturationKeyword, IsSaturationActive());
             SetKeyWord(mColorFilterKeyword, IsColorFilterActive());
 
-            cmd.Blit(source, destination, mMaterial, 0);
+            Blitter.BlitCameraTexture(cmd, source, destination, mMaterial, 0);
         }
 
         private void SetKeyWord(string keyword, bool enabled = true) {

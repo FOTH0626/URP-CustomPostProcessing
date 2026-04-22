@@ -14,6 +14,8 @@ public class CustomPostProcessingFeature : ScriptableRendererFeature
     
     public override void Create()
     {
+        DisposePasses();
+
         var stack = VolumeManager.instance.stack;
 
         _customPostProcessings = VolumeManager.instance.baseComponentTypeArray
@@ -68,15 +70,31 @@ public class CustomPostProcessingFeature : ScriptableRendererFeature
 
     protected override void Dispose(bool disposing)
     {
-        base.Dispose(disposing);
-        if (disposing && _customPostProcessings != null)
+        if (disposing)
         {
-            foreach (var item in _customPostProcessings)
+            DisposePasses();
+
+            if (_customPostProcessings != null)
             {
-                item.Dispose();
+                foreach (var item in _customPostProcessings)
+                {
+                    item.Dispose();
+                }
             }
         }
+
+        base.Dispose(disposing);
     }
-    
-    
+
+    private void DisposePasses()
+    {
+        _afterOpaqueAndSkyPasses?.Dispose();
+        _afterOpaqueAndSkyPasses = null;
+
+        _beforePostProcessingPasses?.Dispose();
+        _beforePostProcessingPasses = null;
+
+        _afterPostProcessingPasses?.Dispose();
+        _afterPostProcessingPasses = null;
+    }
 }
