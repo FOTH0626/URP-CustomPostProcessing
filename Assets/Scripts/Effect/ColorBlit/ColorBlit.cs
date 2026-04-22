@@ -4,7 +4,6 @@ using UnityEngine.Rendering.Universal;
 
 namespace CustomPostProcessingEffects
 {
-    
     [VolumeComponentMenu("Custom Post-processing/Color Blit")]
     public class ColorBlit : CustomPostProcessing
     {
@@ -14,7 +13,7 @@ namespace CustomPostProcessingEffects
         private const string _shaderName = "Hidden/PostProcess/ColorBlit";
         
 
-        public override bool IsActive() => true;
+        public override bool IsActive() => _material != null && intensity.value > 0;
 
         public override CustomPostProcessInjectionPoint InjectionPoint =>
             CustomPostProcessInjectionPoint.AfterOpaqueAndSky;
