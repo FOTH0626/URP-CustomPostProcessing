@@ -1,4 +1,4 @@
-﻿Shader "Hidden/PostProcess/ColorAdjusments"
+﻿Shader "Hidden/PostProcess/ColorAdjustments"
 {
     Properties {
         [HideInInspector] _MainTex ("Base (RGB)", 2D) = "white" {}

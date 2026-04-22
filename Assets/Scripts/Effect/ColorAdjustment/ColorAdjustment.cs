@@ -4,7 +4,7 @@ using UnityEngine.Rendering.Universal;
 
 
 namespace CustomPostProcessingEffects{
-    [VolumeComponentMenu("Custom Post-processing/Color Adjusment")]
+    [VolumeComponentMenu("Custom Post-processing/Color Adjustment")]
     public class ColorAdjustments : CustomPostProcessing{
         #region Parameters Define
 
@@ -26,12 +26,12 @@ namespace CustomPostProcessingEffects{
         #endregion
 
         private Material mMaterial;
-        private const string mShaderName = "Hidden/PostProcess/ColorAdjusments";
+        private const string mShaderName = "Hidden/PostProcess/ColorAdjustments";
 
         #region Active State Check
 
         public override bool IsActive() =>
-            mMaterial != null && (IsPostExposureActive() || IsContrastActive() || IsContrastActive() || IsColorFilterActive() || IsHueShiftActive() || IsSaturationActive());
+            mMaterial != null && (IsPostExposureActive() ||  IsContrastActive() || IsColorFilterActive() || IsHueShiftActive() || IsSaturationActive());
 
         private bool IsPostExposureActive() => postExposure.value != 0.0f;
         private bool IsContrastActive() => contrast.value != 0.0f;
