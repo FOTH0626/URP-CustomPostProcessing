@@ -116,6 +116,22 @@ MonoBehaviour:
   intensity:
     m_OverrideState: 1
     m_Value: 0.834
+--- !u!114 &-610170492684192315
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76c120fa194449ca9dfb54f715e4f3d, type: 3}
+  m_Name: Negative
+  m_EditorClassIdentifier: 
+  active: 1
+  EffectActive:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +151,7 @@ MonoBehaviour:
   - {fileID: -1738037508854351567}
   - {fileID: 6870707159622960847}
   - {fileID: 8272487256373712519}
+  - {fileID: -610170492684192315}
 --- !u!114 &849379129802519247
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -218,7 +235,7 @@ MonoBehaviour:
   active: 1
   BlurRadius:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   Iteration:
     m_OverrideState: 1
     m_Value: 16

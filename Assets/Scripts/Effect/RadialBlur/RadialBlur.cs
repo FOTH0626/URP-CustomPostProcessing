@@ -2,6 +2,7 @@
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
+[VolumeComponentMenu("Custom Post-processing/RadialBlur")]
 public class RadialBlur : CustomPostProcessing
 {
     private static readonly int RadialBlurParams = Shader.PropertyToID("_RadialBlurParams");
